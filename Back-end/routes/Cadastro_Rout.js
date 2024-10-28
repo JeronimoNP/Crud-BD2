@@ -1,7 +1,18 @@
+/*
+    Database: Agenda_aluno
+        Campos:
+            id:
+            matricula:
+            nome:
+            email:
+            nascimento:
+            cpf:
+            
+*/
+
 const express = require('express');
 const routes = express.Router();
 const cors = require('cors');
-
 routes.use(cors());
 
 routes.post('/cadastro', (req, res) =>{

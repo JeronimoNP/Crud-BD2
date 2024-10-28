@@ -8,9 +8,18 @@ const Agenda_alunoBD = db.define('agenda', {
         allowNull: false,
         primaryKey: true
     },
+    matricula:{
+        type: Sequelize.STRING(12),
+        allowNull: false
+    },
 
     nome:{
         type: Sequelize.STRING(255),
+        allowNull: false
+    },
+
+    cpf:{
+        type: Sequelize.STRING(14),
         allowNull: false
     },
 

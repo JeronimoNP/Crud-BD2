@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listar Usuários</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Telefone</th>
+                    <th>Função</th>
+                    <th>Prioridade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <!-- Exemplo de dados estáticos -->
+                <tr>
+                    <td>Bruno</td>
+                    <td>bruno@empresa.com</td>
+                    <td>smart-bruno</td>
+                    <td>123789</td>
+                    <td>12345678</td>
+                    <td>Faturista</td>
+                    <td>Baixa</td>
+                    <td>
+                        <button class="btn editar">Editar</button>
+                        <button class="btn excluir">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Mais linhas serão adicionadas dinamicamente -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button class="page-btn">« Anterior</button>
+            <span class="page-num">1</span>
+            <button class="page-btn">Próxima »</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
