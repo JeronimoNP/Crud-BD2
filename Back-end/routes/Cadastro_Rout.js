@@ -29,5 +29,11 @@ routes.get('/listar', (req, res) =>{
     cadastroControll.listar(res);
 })
 
+routes.delete('/delete', (req, res) => {
+    const id = req.body;
+    console.log(id);
+    cadastroControll.deletar(id, res);
+})
+
 //exportando routes
 module.exports = routes;
