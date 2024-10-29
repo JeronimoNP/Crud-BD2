@@ -13,14 +13,13 @@
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
+                    <th>Matricula</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Login</th>
-                    <th>Senha</th>
-                    <th>Telefone</th>
-                    <th>Função</th>
-                    <th>Prioridade</th>
-                    <th>Ações</th>
+                    <th>Nascimento</th>
+                    <th>Cpf</th>
+                    
                 </tr>
             </thead>
             <tbody id="userTable">
@@ -40,17 +39,11 @@
             <span class="close" onclick="fecharFormulario()">&times;</span>
             <h2>Cadastrar Aluno</h2>
             <form id="cadastroForm">
+                <input type="text" placeholder="Matricula" id="matricula" required>
                 <input type="text" placeholder="Nome" id="nome" required>
                 <input type="email" placeholder="Email" id="email" required>
-                <input type="text" placeholder="Login" id="login" required>
-                <input type="password" placeholder="Senha" id="senha" required>
-                <input type="text" placeholder="Telefone" id="telefone">
-                <input type="text" placeholder="Função" id="funcao">
-                <select id="prioridade">
-                    <option value="alta">Alta</option>
-                    <option value="média">Média</option>
-                    <option value="baixa">Baixa</option>
-                </select>
+                <input type="date" placeholder="Nascimento" id="nascimento" required>
+                <input type="text" placeholder="Cpf" id="cpf">
                 <button type="submit" class="btn cadastrar">Cadastrar</button>
             </form>
         </div>

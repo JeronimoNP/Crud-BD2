@@ -54,9 +54,21 @@ const agenda_alunoBd = require('../models/Agenda_aluno');
         })
     }
 
+    async function listarbd(){
+        try{
+            let listaalunos = await agenda_alunoBd.findAll({
+                attributes: ['id', 'matricula', 'nome', 'email', 'nascimento', 'cpf']
+            });
+            return listaalunos;
+        } catch (error) {
+            console.error('erro ao listar alunos do bd');
+            throw error;
+        }
+    }
     module.exports = {
         cpfchecker,
         emailchecker,
         matriculachecker,
-        cadastraraluno
+        cadastraraluno,
+        listarbd
     };

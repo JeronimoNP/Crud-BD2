@@ -28,8 +28,10 @@
         }
     }
 
-    function listar(res){
+    async function listar(res){
+        const listarmiddle = await Registermiddleware.listarbd();
 
+        return res.status(200).json(listarmiddle);
     }
     module.exports = {
         cadastro,
