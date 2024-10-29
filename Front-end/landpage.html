@@ -10,22 +10,24 @@
     <div class="container">
         <h1>Listar Usuários</h1>
         <button class="btn cadastrar" onclick="abrirFormulario()">Cadastrar Aluno</button>
+        
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Matricula</th>
+                    <th>Matrícula</th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Nascimento</th>
-                    <th>Cpf</th>
-                    
+                    <th>CPF</th>
+                    <th>Ações</th> <!-- Adicionando a coluna de Ações -->
                 </tr>
             </thead>
             <tbody id="userTable">
                 <!-- Os dados serão preenchidos pelo JavaScript -->
             </tbody>
         </table>
+        
         <div class="pagination">
             <button class="page-btn">« Anterior</button>
             <span class="page-num">1</span>
@@ -39,11 +41,11 @@
             <span class="close" onclick="fecharFormulario()">&times;</span>
             <h2>Cadastrar Aluno</h2>
             <form id="cadastroForm">
-                <input type="text" placeholder="Matricula" id="matricula" required>
+                <input type="text" placeholder="Matrícula" id="matricula" required>
                 <input type="text" placeholder="Nome" id="nome" required>
                 <input type="email" placeholder="Email" id="email" required>
                 <input type="date" placeholder="Nascimento" id="nascimento" required>
-                <input type="text" placeholder="Cpf" id="cpf">
+                <input type="text" placeholder="CPF" id="cpf" required>
                 <button type="submit" class="btn cadastrar">Cadastrar</button>
             </form>
         </div>
