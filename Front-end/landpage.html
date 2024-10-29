@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Listar Usuários</h1>
+        <button class="btn cadastrar" onclick="abrirFormulario()">Cadastrar Aluno</button>
         <table>
             <thead>
                 <tr>
@@ -23,27 +24,35 @@
                 </tr>
             </thead>
             <tbody id="userTable">
-                <!-- Exemplo de dados estáticos -->
-                <tr>
-                    <td>Bruno</td>
-                    <td>bruno@empresa.com</td>
-                    <td>smart-bruno</td>
-                    <td>123789</td>
-                    <td>12345678</td>
-                    <td>Faturista</td>
-                    <td>Baixa</td>
-                    <td>
-                        <button class="btn editar">Editar</button>
-                        <button class="btn excluir">Excluir</button>
-                    </td>
-                </tr>
-                <!-- Mais linhas serão adicionadas dinamicamente -->
+                <!-- Os dados serão preenchidos pelo JavaScript -->
             </tbody>
         </table>
         <div class="pagination">
             <button class="page-btn">« Anterior</button>
             <span class="page-num">1</span>
             <button class="page-btn">Próxima »</button>
+        </div>
+    </div>
+
+    <!-- Modal para formulário de cadastro -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharFormulario()">&times;</span>
+            <h2>Cadastrar Aluno</h2>
+            <form id="cadastroForm">
+                <input type="text" placeholder="Nome" id="nome" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="text" placeholder="Login" id="login" required>
+                <input type="password" placeholder="Senha" id="senha" required>
+                <input type="text" placeholder="Telefone" id="telefone">
+                <input type="text" placeholder="Função" id="funcao">
+                <select id="prioridade">
+                    <option value="alta">Alta</option>
+                    <option value="média">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+                <button type="submit" class="btn cadastrar">Cadastrar</button>
+            </form>
         </div>
     </div>
 

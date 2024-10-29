@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Dados de exemplo para preencher a tabela inicialmente
     const users = [
         { nome: "Bruno", email: "bruno@empresa.com", login: "smart-bruno", senha: "123789", telefone: "12345678", funcao: "Faturista", prioridade: "Baixa" },
-        { nome: "Cristina Sena", email: "cristina@empresa.com", login: "smart-cristina", senha: "45785#", telefone: "87654321", funcao: "Departamento Pessoal", prioridade: "Alta" },
-        // Adicione mais dados para simulação
+        { nome: "Cristina Sena", email: "cristina@empresa.com", login: "smart-cristina", senha: "45785#", telefone: "87654321", funcao: "Departamento Pessoal", prioridade: "Alta" }
     ];
 
     const userTable = document.getElementById("userTable");
 
+    // Função para renderizar a tabela com os dados
     function renderTable(data) {
         userTable.innerHTML = "";
         data.forEach(user => {
@@ -28,6 +29,35 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Renderiza a tabela com os dados
+    // Função para abrir o modal
+    window.abrirFormulario = function() {
+        document.getElementById("formModal").style.display = "flex";
+    };
+
+    // Função para fechar o modal
+    window.fecharFormulario = function() {
+        document.getElementById("formModal").style.display = "none";
+    };
+
+    // Listener para o formulário de cadastro
+    document.getElementById("cadastroForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const novoAluno = {
+            nome: document.getElementById("nome").value,
+            email: document.getElementById("email").value,
+            login: document.getElementById("login").value,
+            senha: document.getElementById("senha").value,
+            telefone: document.getElementById("telefone").value,
+            funcao: document.getElementById("funcao").value,
+            prioridade: document.getElementById("prioridade").value
+        };
+
+        users.push(novoAluno); // Adiciona o novo aluno aos dados
+        renderTable(users); // Atualiza a tabela com o novo aluno
+        fecharFormulario(); // Fecha o modal
+    });
+
+    // Renderiza a tabela com os dados iniciais
     renderTable(users);
 });

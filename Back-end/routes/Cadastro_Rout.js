@@ -12,6 +12,7 @@
 
 const express = require('express');
 const routes = express.Router();
+const cadastroControll = require('../controllers/controlcadastro');
 const cors = require('cors');
 routes.use(cors());
 
@@ -19,16 +20,13 @@ routes.post('/cadastro', (req, res) =>{
 
     //puxando os dados do front end
     const dadoscadastro = req.body;
-    console.log(req.body);
+    
     //redirecionando para controllers para o tratamento de dados.
-    dadoscadastro.cadastro(dadosempresa, res);
+    cadastroControll.cadastro(dadoscadastro, res);
 })
 
-routes.get('/listar', (req, res) =>{
-    res.status(200).json({
-        accept: true,
-        "route": 'listar'
-    })
+routes.get('/listar', (res) =>{
+    cadastroControll.listar(res);
 })
 
 //exportando routes

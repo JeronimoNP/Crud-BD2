@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const db = require('./db.js');
+const db = require('./db');
 
 const Agenda_alunoBD = db.define('agenda', {
     id:{
@@ -28,8 +28,12 @@ const Agenda_alunoBD = db.define('agenda', {
         allowNull: false
     },
 
-    telefone:{
-        type: Sequelize.STRING(15),
+    nascimento:{
+        type: Sequelize.DATE,
         allowNull: false
     }
 })
+
+Agenda_alunoBD.sync();
+
+module.exports = Agenda_alunoBD;
