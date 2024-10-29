@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Listar Usuários</h1>
+        <button class="btn cadastrar" onclick="abrirFormulario()">Cadastrar Aluno</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Telefone</th>
+                    <th>Função</th>
+                    <th>Prioridade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <!-- Os dados serão preenchidos pelo JavaScript -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button class="page-btn">« Anterior</button>
+            <span class="page-num">1</span>
+            <button class="page-btn">Próxima »</button>
+        </div>
+    </div>
+
+    <!-- Modal para formulário de cadastro -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharFormulario()">&times;</span>
+            <h2>Cadastrar Aluno</h2>
+            <form id="cadastroForm">
+                <input type="text" placeholder="Nome" id="nome" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="text" placeholder="Login" id="login" required>
+                <input type="password" placeholder="Senha" id="senha" required>
+                <input type="text" placeholder="Telefone" id="telefone">
+                <input type="text" placeholder="Função" id="funcao">
+                <select id="prioridade">
+                    <option value="alta">Alta</option>
+                    <option value="média">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+                <button type="submit" class="btn cadastrar">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

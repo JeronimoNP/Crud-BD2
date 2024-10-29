@@ -2,9 +2,11 @@ const Express = require('express');
 const Cors = require('cors');
 const cadastro = require('../Back-end/routes/Cadastro_Rout.js');
 const api = Express();
+const bodyParser = require('body-parser');
 
 
 api.use(Cors());
+api.use(bodyParser.json());
 
 //direcionador de portas(rotas)
 api.use('/', cadastro);
