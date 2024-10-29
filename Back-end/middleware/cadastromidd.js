@@ -54,9 +54,39 @@ const agenda_alunoBd = require('../models/Agenda_aluno');
         })
     }
 
+    async function listarbd(){
+        try{
+            let listaalunos = await agenda_alunoBd.findAll({
+                attributes: ['id', 'matricula', 'nome', 'email', 'nascimento', 'cpf']
+            });
+            return listaalunos;
+        } catch (error) {
+            console.error('erro ao listar alunos do bd');
+            throw error;
+        }
+    }
+
+    async function deletaralunodb(id1, res){
+        await agenda_alunoBd.destroy({
+            where: {id: id1.id}
+        }).then(() => {
+            return res.status(200).json({
+                erro: false,
+                info: "Aluno excluido com sucesso"
+            })
+        }).catch(error =>{
+            return res.status(400).json({
+                erro: true,
+                info: "erro ao excluir motorista",
+                "console log": error
+            })
+        })
+    }
     module.exports = {
         cpfchecker,
         emailchecker,
         matriculachecker,
-        cadastraraluno
+        cadastraraluno,
+        listarbd,
+        deletaralunodb
     };

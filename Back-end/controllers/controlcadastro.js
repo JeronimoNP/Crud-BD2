@@ -28,10 +28,18 @@
         }
     }
 
-    function listar(res){
+    async function listar(res){
+        const listarmiddle = await Registermiddleware.listarbd();
 
+        return res.status(200).json(listarmiddle);
     }
+
+    async function deletar(id, res){
+        await Registermiddleware.deletaralunodb(id, res);
+    }
+
     module.exports = {
         cadastro,
-        listar
+        listar,
+        deletar
     };

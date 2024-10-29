@@ -10,23 +10,24 @@
     <div class="container">
         <h1>Listar Usuários</h1>
         <button class="btn cadastrar" onclick="abrirFormulario()">Cadastrar Aluno</button>
+        
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
+                    <th>Matrícula</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Login</th>
-                    <th>Senha</th>
-                    <th>Telefone</th>
-                    <th>Função</th>
-                    <th>Prioridade</th>
-                    <th>Ações</th>
+                    <th>Nascimento</th>
+                    <th>CPF</th>
+                    <th>Ações</th> <!-- Adicionando a coluna de Ações -->
                 </tr>
             </thead>
             <tbody id="userTable">
                 <!-- Os dados serão preenchidos pelo JavaScript -->
             </tbody>
         </table>
+        
         <div class="pagination">
             <button class="page-btn">« Anterior</button>
             <span class="page-num">1</span>
@@ -40,17 +41,11 @@
             <span class="close" onclick="fecharFormulario()">&times;</span>
             <h2>Cadastrar Aluno</h2>
             <form id="cadastroForm">
+                <input type="text" placeholder="Matrícula" id="matricula" required>
                 <input type="text" placeholder="Nome" id="nome" required>
                 <input type="email" placeholder="Email" id="email" required>
-                <input type="text" placeholder="Login" id="login" required>
-                <input type="password" placeholder="Senha" id="senha" required>
-                <input type="text" placeholder="Telefone" id="telefone">
-                <input type="text" placeholder="Função" id="funcao">
-                <select id="prioridade">
-                    <option value="alta">Alta</option>
-                    <option value="média">Média</option>
-                    <option value="baixa">Baixa</option>
-                </select>
+                <input type="date" placeholder="Nascimento" id="nascimento" required>
+                <input type="text" placeholder="CPF" id="cpf" required>
                 <button type="submit" class="btn cadastrar">Cadastrar</button>
             </form>
         </div>
