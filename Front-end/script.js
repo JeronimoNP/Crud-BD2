@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${formatarDataBrasileira(user.nascimento)}</td>
                 <td>${user.cpf}</td>
                 <td>
-                    <button class="btn editar">Editar</button>
+                    
                     <button class="btn excluir" data-id="${user.id}">Excluir</button>
                 </td>
             `;
